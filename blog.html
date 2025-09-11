@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Blog de Murilo Feliciano - Dicas, tutoriais e insights sobre fotografia">
+  <title>Blog | Murilo Feliciano Fotografia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #1a1a1a;
+      --secondary-color: #4a4a4a;
+      --accent-color: #0066cc;
+      --light-bg: #f7f7f7;
+      --white: #ffffff;
+      --transition: all 0.3s ease;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--white);
+      color: var(--primary-color);
+      line-height: 1.6;
+    }
+
+    /* Layout principal */
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 280px;
+      padding: 2.5rem 2rem;
+      background-color: var(--light-bg);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: fixed;
+      height: 100vh;
+      border-right: 1px solid #e0e0e0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+    }
+
+    .tagline {
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+      color: var(--secondary-color);
+      font-weight: 300;
+      line-height: 1.5;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--secondary-color);
+      font-size: 1rem;
+      font-weight: 500;
+      transition: var(--transition);
+      padding: 0.5rem 0;
+      position: relative;
+    }
+
+    nav a:hover {
+      color: var(--primary-color);
+    }
+
+    nav a.active {
+      color: var(--accent-color);
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--accent-color);
+      transition: var(--transition);
+    }
+
+    nav a:hover::after, nav a.active::after {
+      width: 40px;
+    }
+
+    .social {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social a {
+      color: var(--secondary-color);
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+
+    .social a:hover {
+      color: var(--accent-color);
+      transform: translateY(-2px);
+    }
+
+    /* Conteúdo principal */
+    .main-content {
+      margin-left: 280px;
+      padding: 3rem;
+      width: calc(100% - 280px);
+    }
+
+    /* Header do Blog */
+    .blog-header {
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .blog-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+    }
+
+    .blog-header p {
+      color: var(--secondary-color);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Filtros de Categoria */
+    .blog-filters {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .filter-btn {
+      background: none;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: var(--secondary-color);
+      transition: var(--transition);
+      border-radius: 25px;
+      border: 1px solid #e0e0e0;
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+      background-color: var(--accent-color);
+      color: white;
+      border-color: var(--accent-color);
+    }
+
+    /* Grid de Posts */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .blog-card {
+      background: var(--white);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: var(--transition);
+    }
+
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-image {
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .blog-card:hover .card-image img {
+      transform: scale(1.05);
+    }
+
+    .card-content {
+      padding: 1.5rem;
+    }
+
+    .card-category {
+      display: inline-block;
+      font-size: 0.8rem;
+      color: var(--accent-color);
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .card-title {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+
+    .card-excerpt {
+      color: var(--secondary-color);
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--secondary-color);
+    }
+
+    .card-date {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card-read-time {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Newsletter */
+    .newsletter {
+      background: var(--light-bg);
+      padding: 3rem;
+      border-radius: 10px;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .newsletter h2 {
+      margin-bottom: 1rem;
+    }
+
+    .newsletter p {
+      color: var(--secondary-color);
+      max-width: 500px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .newsletter-form {
+      display: flex;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 0.8rem 1rem;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px 0 0 4px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .newsletter-form button {
+      background: var(--accent-color);
+      color: white;
+      border: none;
+      padding: 0 1.5rem;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: var(--transition);
+    }
+
+    .newsletter-form button:hover {
+      background: #0055aa;
+    }
+
+    /* Posts Populares */
+    .popular-posts {
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--accent-color);
+      display: inline-block;
+    }
+
+    .popular-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .popular-card {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .popular-card img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .popular-content h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .popular-content .card-date {
+      font-size: 0.8rem;
+    }
+
+    /* Paginação */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .pagination-btn {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #e0e0e0;
+      background: white;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .pagination-btn:hover, .pagination-btn.active {
+      background: var(--accent-color);
+      color: white;
+      border-color: var(--accent-color);
+    }
+
+    /* Footer */
+    footer {
+      margin-left: 280px;
+      padding: 2rem 3rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--secondary-color);
+      border-top: 1px solid #e0e0e0;
+    }
+
+    /* Responsividade */
+    @media (max-width: 1200px) {
+      .blog-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      }
+      
+      .popular-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+      }
+      
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 1.5rem;
+      }
+      
+      .main-content, footer {
+        margin-left: 0;
+        width: 100%;
+      }
+      
+      .main-content {
+        padding: 2rem;
+      }
+      
+      .newsletter-form {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .newsletter-form input,
+      .newsletter-form button {
+        border-radius: 4px;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .popular-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .blog-header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div>
+        <div class="logo">Murilo Feliciano</div>
+        <p class="tagline">a fotografia é o meu modo de enxergar o mundo. Seja registrando uma paisagem, retrando pessoas em momentos que no agora parecem simples. Não sou profissional, mas tento colocar paixão em cada clique.</p>
+        <nav>
+          <a href="portfolio.html">Portfólio</a>
+          <a href="sobre.html">Sobre</a>
+          <a href="projetos.html">Projetos</a>
+          <a href="blog.html" class="active">Blog</a>
+          <a href="contato.html">Contato</a>
+        </nav>
+      </div>
+      <div class="social">
+        <a href="mailto:contato@murilofeliciano.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://instagram.com/murilofeliciano" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/murilofeliciano" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://500px.com/murilofeliciano" target="_blank" aria-label="500px"><i class="fab fa-500px"></i></a>
+      </div>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+      <!-- Header do Blog -->
+      <header class="blog-header">
+        <h1>Blog de Fotografia</h1>
+        <p>Dicas, tutoriais, behind the scenes e insights sobre o mundo da fotografia</p>
+      </header>
+
+      <!-- Filtros de Categoria -->
+      <div class="blog-filters">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="tutoriais">Tutoriais</button>
+        <button class="filter-btn" data-filter="equipamentos">Equipamentos</button>
+        <button class="filter-btn" data-filter="pos-processamento">Pós-processamento</button>
+        <button class="filter-btn" data-filter="negocios">Negócios</button>
+        <button class="filter-btn" data-filter="por-tras-das-cenas">Behind the Scenes</button>
+      </div>
+
+      <!-- Grid de Posts -->
+      <div class="blog-grid">
+        <!-- Post 1 -->
+        <article class="blog-card" data-category="tutoriais">
+          <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80" alt="Guia de fotografia noturna">
+          </div>
+          <div class="card-content">
+            <span class="card-category">Tutoriais</span>
+            <h2 class="card-title">Guia Completo de Fotografia Noturna: Capturando as Estrelas</h2>
+            <p class="card-excerpt">Aprenda as técnicas essenciais para fotografar em condições de pouca luz e capturar imagens incríveis do céu noturno.</p>
+            <div class="card-meta">
+              <div class="card-date">
+                <i class="far fa-calendar"></i>
+                <span>12 de Junho, 2023</span>
+              </div>
+              <div class="card-read-time">
+                <i class="far fa-clock"></i>
+                <span>8 min read</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Post 2 -->
+        <article class="blog-card" data-category="equipamentos">
+          <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1566864222010-d45675442c31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80" alt="Melhores lentes para retratos">
+          </div>
+          <div class="card-content">
+            <span class="card-category">Equipamentos</span>
+            <h2 class="card-title">As 5 Melhores Lentes para Retratos em 2023</h2>
+            <p class="card-excerpt">Descubra quais lentes oferecem o melhor desempenho para retratos e por que a escolha da lente certa faz toda a diferença.</p>
+            <div class="card-meta">
+              <div class="card-date">
+                <i class="far fa-calendar"></i>
+                <span>5 de Junho, 2023</span>
+              </div>
+              <div class="card-read-time">
+                <i class="far fa-clock"></i>
+                <span>6 min read</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Post 3 -->
+        <article class="blog-card" data-category="por-tras-das-cenas">
+          <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1452780212940-6f5c0d14d848?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80" alt="Sessão de fotos na praia">
+          </div>
+          <div class="card-content">
+            <span class="card-category">Behind the Scenes</span>
+            <h2 class="card-title">Behind the Scenes: Sessão de Fotos no Nascer do Sol</h2>
+            <p class="card-excerpt">Veja como foi o processo de criação da série "Amanhecer na Praia" - desde o planejamento até a edição final.</p>
+            <div class="card-meta">
+              <div class="card-date">
+                <i class="far fa-calendar"></i>
+                <span>28 de Maio, 2023</span>
+              </div>
+              <div class="card-read-time">
+                <i class="far fa-clock"></i>
+                <span>5 min read</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Post 4 -->
+        <article class="blog-card" data-category="pos-processamento">
+          <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1550645612-83f5d594b671?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80" alt="Edição no Lightroom">
+          </div>
+          <div class="card-content">
+            <span class="card-category">Pós-processamento</span>
+            <h2 class="card-title">Meu Fluxo de Trabalho no Lightroom: Do RAW ao Resultado Final</h2>
+            <p class="card-excerpt">Compartilho meu processo completo de edição, desde a importação até a exportação, com dicas para agilizar seu workflow.</p>
+            <div class="card-meta">
+              <div class="card-date">
+                <i class="far fa-calendar"></i>
+                <span>20 de Maio, 2023</span>
+              </div>
+              <div class="card-read-time">
+                <i class="far fa-clock"></i>
+                <span>10 min read</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Post 5 -->
+        <article class="blog-card" data-category="negocios">
+          <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80" alt="Precificação de serviços fotográficos">
+          </div>
+          <div class="card-content">
+            <span class="card-category">Negócios</span>
+            <h2 class="card-title">Como Precificar Seus Serviços Fotográficos sem Medo</h2>
+            <p class="card-excerpt">Um guia honesto sobre como calcular seus preços, lidar com negociações e valorizar seu trabalho como fotógrafo.</p>
+            <div class="card-meta">
+              <div class="card-date">
+                <i class="far fa-calendar"></i>
+                <span>15 de Maio, 2023</span>
+              </div>
+              <div class="card-read-time">
+                <i class="far fa-clock"></i>
+                <span>7 min read</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Post 6 -->
+        <article class="blog-card" data-category="tutoriais">
+          <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80" alt="Composição fotográfica">
+          </div>
+          <div class="card-content">
+            <span class="card-category">Tutoriais</span>
+            <h2 class="card-title">7 Regras de Composição que Todo Fotógrafo Deve Conhecer</h2>
+            <p class="card-excerpt">Domine as técnicas de composição que transformam fotos comuns em imagens extraordinárias e cativantes.</p>
+            <div class="card-meta">
+              <div class="card-date">
+                <i class="far fa-calendar"></i>
+                <span>8 de Maio, 2023</span>
+              </div>
+              <div class="card-read-time">
+                <i class="far fa-clock"></i>
+                <span>9 min read</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Paginação -->
+      <div class="pagination">
+        <button class="pagination-btn active">1</button>
+        <button class="pagination-btn">2</button>
+        <button class="pagination-btn">3</button>
+        <button class="pagination-btn">></button>
+      </div>
+
+      <!-- Newsletter -->
+      <section class="newsletter">
+        <h2>Fique Por Dentro</h2>
+        <p>Inscreva-se para receber dicas exclusivas, novidades e atualizações diretamente no seu email.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Seu melhor email" required>
+          <button type="submit">Inscrever</button>
+        </form>
+      </section>
+
+      <!-- Posts Populares -->
+      <section class="popular-posts">
+        <h2 class="section-title">Posts Populares</h2>
+        <div class="popular-grid">
+          <article class="popular-card">
+            <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100&q=80" alt="Fotografia noturna">
+            <div class="popular-content">
+              <h3>Guia Completo de Fotografia Noturna</h3>
+              <div class="card-date">
+                <i class="far fa-calendar"></i>
+                <span>12 de Jun, 2023</span>
+              </div>
+            </div>
+          </article>
+          <article class="popular-card">
+            <img src="https://images.unsplash.com/photo-1566864222010-d45675442c31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100&q=80" alt="Lentes para retratos">
+            <div class="popular-content">
+              <h3>As 5 Melhores Lentes para Retratos em 2023</h3>
+              <div class="card-date">
+                <i class="far fa-calendar"></i>
+                <span>5 de Jun, 2023</span>
+              </div>
+            </div>
+          </article>
+          <article class="popular-card">
+            <img src="https://images.unsplash.com/photo-1550645612-83f5d594b671?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100&q=80" alt="Edição no Lightroom">
+            <div class="popular-content">
+              <h3>Meu Fluxo de Trabalho no Lightroom</h3>
+              <div class="card-date">
+                <i class="far fa-calendar"></i>
+                <span>20 de Mai, 2023</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Murilo Feliciano Fotografia. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    // Atualiza o ano no footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Filtros de categoria
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const blogCards = document.querySelectorAll('.blog-card');
+    
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove a classe active de todos os botões
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        // Adiciona a classe active ao botão clicado
+        button.classList.add('active');
+        
+        const filter = button.getAttribute('data-filter');
+        
+        blogCards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Paginação
+    const paginationButtons = document.querySelectorAll('.pagination-btn');
+    
+    paginationButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        paginationButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        // Aqui iria a lógica para carregar a página correspondente
+      });
+    });
+
+    // Newsletter form
+    const newsletterForm = document.querySelector('.newsletter-form');
+    
+    newsletterForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = this.querySelector('input').value;
+      alert(`Obrigado por se inscrever com o email: ${email}`);
+      this.reset();
+    });
+  </script>
+</body>
+</html>

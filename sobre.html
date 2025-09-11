@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sobre Murilo Feliciano - Fotógrafo profissional especializado em paisagens, retratos e eventos">
+  <title>Sobre | Murilo Feliciano Fotografia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #1a1a1a;
+      --secondary-color: #4a4a4a;
+      --accent-color: #0066cc;
+      --light-bg: #f7f7f7;
+      --white: #ffffff;
+      --transition: all 0.3s ease;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--white);
+      color: var(--primary-color);
+      line-height: 1.6;
+    }
+
+    /* Layout principal */
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 280px;
+      padding: 2.5rem 2rem;
+      background-color: var(--light-bg);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: fixed;
+      height: 100vh;
+      border-right: 1px solid #e0e0e0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+    }
+
+    .tagline {
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+      color: var(--secondary-color);
+      font-weight: 300;
+      line-height: 1.5;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--secondary-color);
+      font-size: 1rem;
+      font-weight: 500;
+      transition: var(--transition);
+      padding: 0.5rem 0;
+      position: relative;
+    }
+
+    nav a:hover {
+      color: var(--primary-color);
+    }
+
+    nav a.active {
+      color: var(--accent-color);
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--accent-color);
+      transition: var(--transition);
+    }
+
+    nav a:hover::after, nav a.active::after {
+      width: 40px;
+    }
+
+    .social {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social a {
+      color: var(--secondary-color);
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+
+    .social a:hover {
+      color: var(--accent-color);
+      transform: translateY(-2px);
+    }
+
+    /* Conteúdo principal */
+    .main-content {
+      margin-left: 280px;
+      padding: 3rem;
+      width: calc(100% - 280px);
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      margin-bottom: 5rem;
+    }
+
+    .profile-image {
+      flex: 1;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary-color);
+    }
+
+    .hero-content p {
+      margin-bottom: 1.5rem;
+      color: var(--secondary-color);
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .signature {
+      font-family: cursive;
+      font-size: 2rem;
+      color: var(--accent-color);
+      margin-top: 2rem;
+    }
+
+    /* Seções */
+    .section {
+      margin-bottom: 5rem;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--accent-color);
+      display: inline-block;
+    }
+
+    /* Estilo Fotográfico */
+    .style-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .style-card {
+      background: var(--light-bg);
+      padding: 2rem;
+      border-radius: 8px;
+      transition: var(--transition);
+    }
+
+    .style-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .style-card i {
+      font-size: 2rem;
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+    }
+
+    .style-card h3 {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    /* Equipamentos */
+    .equipment-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .equipment-card {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1.5rem;
+      background: var(--light-bg);
+      border-radius: 8px;
+      transition: var(--transition);
+    }
+
+    .equipment-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .equipment-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--accent-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    /* Linha do Tempo */
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      background-color: var(--accent-color);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -2px;
+    }
+
+    .timeline-item {
+      padding: 10px 40px;
+      position: relative;
+      width: 50%;
+      box-sizing: border-box;
+    }
+
+    .timeline-item:nth-child(odd) {
+      left: 0;
+    }
+
+    .timeline-item:nth-child(even) {
+      left: 50%;
+    }
+
+    .timeline-content {
+      padding: 20px;
+      background-color: var(--light-bg);
+      position: relative;
+      border-radius: 8px;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content {
+      margin-right: 30px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-content {
+      margin-left: 30px;
+    }
+
+    .timeline-content::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: var(--light-bg);
+      top: 20px;
+      transform: rotate(45deg);
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content::after {
+      right: -10px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-content::after {
+      left: -10px;
+    }
+
+    .timeline-date {
+      font-weight: 600;
+      color: var(--accent-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: var(--accent-color);
+      border-radius: 50%;
+      top: 20px;
+      z-index: 1;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-dot {
+      right: -10px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-dot {
+      left: -10px;
+    }
+
+    /* Estatísticas */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      text-align: center;
+    }
+
+    .stat-item {
+      padding: 2rem 1rem;
+      background: var(--light-bg);
+      border-radius: 8px;
+      transition: var(--transition);
+    }
+
+    .stat-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--accent-color);
+      margin-bottom: 0.5rem;
+    }
+
+    /* Depoimentos */
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .testimonial-card {
+      padding: 2rem;
+      background: var(--light-bg);
+      border-radius: 8px;
+      position: relative;
+    }
+
+    .testimonial-card::before {
+      content: '"';
+      font-size: 5rem;
+      color: var(--accent-color);
+      opacity: 0.2;
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      line-height: 1;
+    }
+
+    .testimonial-text {
+      margin-bottom: 1.5rem;
+      font-style: italic;
+      position: relative;
+      z-index: 1;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .author-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .author-info h4 {
+      margin-bottom: 0.2rem;
+    }
+
+    .author-info p {
+      font-size: 0.9rem;
+      color: var(--secondary-color);
+    }
+
+    /* Footer */
+    footer {
+      margin-left: 280px;
+      padding: 2rem 3rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--secondary-color);
+      border-top: 1px solid #e0e0e0;
+    }
+
+    /* Responsividade */
+    @media (max-width: 1200px) {
+      .hero {
+        flex-direction: column;
+        gap: 2rem;
+      }
+      
+      .profile-image {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      
+
+      
+      .style-grid, .equipment-grid, .testimonials {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+      }
+      
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 1.5rem;
+      }
+      
+      .main-content, footer {
+        margin-left: 0;
+        width: 100%;
+      }
+      
+      .main-content {
+        padding: 2rem;
+      }
+      
+      .timeline::after {
+        left: 31px;
+      }
+      
+      .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+      
+      .timeline-item:nth-child(even) {
+        left: 0;
+      }
+      
+      .timeline-item:nth-child(odd) .timeline-content,
+      .timeline-item:nth-child(even) .timeline-content {
+        margin: 0 0 30px 0;
+      }
+      
+      .timeline-item:nth-child(odd) .timeline-content::after,
+      .timeline-item:nth-child(even) .timeline-content::after {
+        left: 20px;
+        top: -10px;
+        transform: rotate(45deg);
+      }
+      
+      .timeline-item:nth-child(odd) .timeline-dot,
+      .timeline-item:nth-child(even) .timeline-dot {
+        left: 21px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .style-grid, .equipment-grid, .testimonials, .stats-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div>
+        <div class="logo">Murilo Feliciano</div>
+        <p class="tagline">a fotografia é o meu modo de enxergar o mundo. Seja registrando uma paisagem, retrando pessoas em momentos que no agora parecem simples. Não sou profissional, mas tento colocar paixão em cada clique.</p>
+        <nav>
+          <a href="index.html">Portfólio</a>
+          <a href="sobre.html" class="active">Sobre</a>
+          <a href="projetos.html">Projetos</a>
+          <a href="blog.html">Blog</a>
+          <a href="contato.html">Contato</a>
+        </nav>
+      </div>
+      <div class="social">
+        <a href="mailto:contato@murilofeliciano.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://instagram.com/murilofeliciano" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/murilofeliciano" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://500px.com/murilofeliciano" target="_blank" aria-label="500px"><i class="fab fa-500px"></i></a>
+      </div>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="profile-image">
+          <img src="fotos/eu.jpg" alt="Murilo Feliciano - Fotógrafo">
+        </div>
+        <div class="hero-content">
+          <h1>Minha história com os Cliques</h1>
+          <p>Sou Murilo Feliciano e comecei a fotografar em 2021, apenas com meu celular, por pura curiosidade e prazer. Desde criança já gostava de registrar momentos — lembro bem da Cybershot rosa da minha mãe, que eu usava com 6 anos para tirar fotos e gravar vídeos.</p>
+          <p>Em 2024, minha paixão pela fotografia ganhou ainda mais força quando conheci minha namorada. E foi com todo o carinho dela que passei a usar as câmeras Sony Cybershot W610 e a DSC-HX1 dela. Esses cliques me ajudaram muito entender todo o processo complexc que envolve a fotográfia e me fizeram querer seguir aprendendo sempre mais.</p>
+          <p>Hoje, em 2025, continuo nessa caminhada, sonhando com a minha primeira câmera profissional de entrada e, acima de tudo, fotografando porque amo poder registrar momentos, paisagens e minha vida..</p>
+          
+        </div>
+      </section>
+
+      <!-- Estilo Fotográfico -->
+      <section class="section">
+  <h2 class="section-title">Meu Estilo Fotográfico</h2>
+  <div class="style-grid">
+    <div class="style-card">
+      <i class="fas fa-heart"></i>
+      <h3>Simplicidade</h3>
+      <p>Gosto de registrar momentos do jeito que eles acontecem, sem forçar poses ou cenários. Quanto mais natural, melhor.</p>
+    </div>
+    <div class="style-card">
+      <i class="fas fa-sun"></i>
+      <h3>Olhar Curioso</h3>
+      <p>Minha fotografia nasceu da curiosidade. Vejo beleza em detalhes que muitas vezes passam despercebidos.</p>
+    </div>
+    <div class="style-card">
+      <i class="fas fa-lightbulb"></i>
+      <h3>Improviso</h3>
+      <p>Trabalho com o que tenho em mãos. Cada clique é um aprendizado e um jeito de explorar novas possibilidades.</p>
+    </div>
+  </div>
+</section>
+
+
+      <!-- Equipamentos -->
+      <section class="section">
+  <h2 class="section-title">Meus Equipamentos</h2>
+  <div class="equipment-grid">
+    <div class="equipment-card">
+      <div class="equipment-icon">
+        <i class="fas fa-camera"></i>
+      </div>
+      <div>
+        <h3>Câmeras</h3>
+        <p>Celular (desde 2021) <br>
+        Sony Cybershot W610 <br>
+        Sony DSC-HX1 (emprestada da minha namorada)</p>
+      </div>
+    </div>
+    <div class="equipment-card">
+      <div class="equipment-icon">
+        <i class="fas fa-laptop"></i>
+      </div>
+      <div>
+        <h3>Edição</h3>
+        <p>Lightroom Mobile e alguns ajustes básicos no computador</p>
+      </div>
+    </div>
+    <div class="equipment-card">
+      <div class="equipment-icon">
+        <i class="fas fa-compass"></i>
+      </div>
+      <div>
+        <h3>O que vem por aí</h3>
+        <p>Em busca da minha primeira câmera profissional de entrada em 2025.</p>
+      </div>
+    </div>
+  </div>
+</section>
+ <!-- área para fotografos profissionais 
+
+      Linha do Tempo 
+      <section class="section">
+        <h2 class="section-title">Minha Jornada</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">2014</div>
+              <h3>Início da Paixão</h3>
+              <p>Ganhei minha primeira câmera e comecei a explorar o mundo da fotografia, inicialmente como hobby.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">2016</div>
+              <h3>Primeiro Trabalho Profissional</h3>
+              <p>Fui contratado para fotografar um casamento, marcando o início da minha carreira profissional.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">2018</div>
+              <h3>Exposição Coletiva</h3>
+              <p>Participei da exposição "Olhares Urbanos" no Centro Cultural de São Paulo.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">2020</div>
+              <h3>Especialização em Retratos</h3>
+              <p>Concluí curso avançado de fotografia de retratos na New York Institute of Photography.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">2022</div>
+              <h3>Prêmio Nacional</h3>
+              <p>Vencedor do Prêmio Nacional de Fotografia na categoria Paisagem Natural.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+       Estatísticas 
+      <section class="section">
+        <h2 class="section-title">Em Números</h2>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Projetos Concluídos</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">8</div>
+            <div class="stat-label">Anos de Experiência</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">12</div>
+            <div class="stat-label">Prêmios Conquistados</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Clientes Satisfeitos</div>
+          </div>
+        </div>
+      </section>
+
+       Depoimentos 
+      <section class="section">
+        <h2 class="section-title">O Que Dizem Sobre Meu Trabalho</h2>
+        <div class="testimonials">
+          <div class="testimonial-card">
+            <p class="testimonial-text">Murilo capturou perfeitamente a essência do nosso casamento. Suas fotos são incríveis e conseguem transmitir toda a emoção daquele dia especial.</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">
+                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Ana Silva">
+              </div>
+              <div class="author-info">
+                <h4>Ana Silva</h4>
+                <p>Noiva</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-text">Trabalhar com Murilo foi uma experiência incrível. Sua visão artística e atenção aos detalhes trouxeram vida ao nosso projeto corporativo.</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Carlos Mendonça">
+              </div>
+              <div class="author-info">
+                <h4>Carlos Mendonça</h4>
+                <p>Diretor de Marketing</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+--> 
+  <footer>
+    <p>&copy; <span id="year"></span> Murilo Feliciano Fotografia. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    // Atualiza o ano no footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
