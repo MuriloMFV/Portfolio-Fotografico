@@ -1,0 +1,558 @@
+{
+  "fotos/1000264613.jpg": {
+    "width": 1468,
+    "height": 1101,
+    "variants": [
+      {
+        "width": 480,
+        "src": "fotos/optimized/96dbf8190fc36a56-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "fotos/optimized/96dbf8190fc36a56-960.webp"
+      },
+      {
+        "width": 1468,
+        "src": "fotos/optimized/96dbf8190fc36a56-1468.webp"
+      }
+    ]
+  },
+  "fotos/20240107_143346 (3).jpg": {
+    "width": 3018,
+    "height": 3907,
+    "variants": [
+      {
+        "width": 480,
+        "src": "fotos/optimized/0027e452f5442ae2-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "fotos/optimized/0027e452f5442ae2-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "fotos/optimized/0027e452f5442ae2-1600.webp"
+      },
+      {
+        "width": 2400,
+        "src": "fotos/optimized/0027e452f5442ae2-2400.webp"
+      }
+    ]
+  },
+  "fotos/avenidacentro.jpg": {
+    "width": 5673,
+    "height": 7562,
+    "variants": [
+      {
+        "width": 480,
+        "src": "fotos/optimized/b7493f7c3e1b2d37-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "fotos/optimized/b7493f7c3e1b2d37-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "fotos/optimized/b7493f7c3e1b2d37-1600.webp"
+      },
+      {
+        "width": 2400,
+        "src": "fotos/optimized/b7493f7c3e1b2d37-2400.webp"
+      }
+    ]
+  },
+  "fotos/barcocais.jpg": {
+    "width": 1920,
+    "height": 1080,
+    "variants": [
+      {
+        "width": 480,
+        "src": "fotos/optimized/0821ad4c9cd03b4b-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "fotos/optimized/0821ad4c9cd03b4b-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "fotos/optimized/0821ad4c9cd03b4b-1600.webp"
+      },
+      {
+        "width": 1920,
+        "src": "fotos/optimized/0821ad4c9cd03b4b-1920.webp"
+      }
+    ]
+  },
+  "fotos/bordadoamor.jpg": {
+    "width": 6120,
+    "height": 8160,
+    "variants": [
+      {
+        "width": 480,
+        "src": "fotos/optimized/d28ede3355d6f1e7-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "fotos/optimized/d28ede3355d6f1e7-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "fotos/optimized/d28ede3355d6f1e7-1600.webp"
+      },
+      {
+        "width": 2400,
+        "src": "fotos/optimized/d28ede3355d6f1e7-2400.webp"
+      }
+    ]
+  },
+  "fotos/cachorrobowie.jpg": {
+    "width": 2404,
+    "height": 2231,
+    "variants": [
+      {
+        "width": 480,
+        "src": "fotos/optimized/9143bcd2e59b4853-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "fotos/optimized/9143bcd2e59b4853-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "fotos/optimized/9143bcd2e59b4853-1600.webp"
+      },
+      {
+        "width": 2400,
+        "src": "fotos/optimized/9143bcd2e59b4853-2400.webp"
+      }
+    ]
+  },
+  "fotos/cantoaberto.jpg": {
+    "width": 1920,
+    "height": 1080,
+    "variants": [
+      {
+        "width": 480,
+        "src": "fotos/optimized/d4298801a67270cf-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "fotos/optimized/d4298801a67270cf-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "fotos/optimized/d4298801a67270cf-1600.webp"
+      },
+      {
+        "width": 1920,
+        "src": "fotos/optimized/d4298801a67270cf-1920.webp"
+      }
+    ]
+  },
+  "fotos/casapraiadoporto.jpg": {
+    "width": 1920,
+    "height": 1080,
+    "variants": [
+      {
+        "width": 480,
+        "src": "fotos/optimized/d08f0b302aed2c51-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "fotos/optimized/d08f0b302aed2c51-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "fotos/optimized/d08f0b302aed2c51-1600.webp"
+      },
+      {
+        "width": 1920,
+        "src": "fotos/optimized/d08f0b302aed2c51-1920.webp"
+      }
+    ]
+  },
+  "fotos/cdcarangueijo.jpg": {
+    "width": 2375,
+    "height": 2518,
+    "variants": [
+      {
+        "width": 480,
+        "src": "fotos/optimized/1dacc9e818e29b41-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "fotos/optimized/1dacc9e818e29b41-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "fotos/optimized/1dacc9e818e29b41-1600.webp"
+      },
+      {
+        "width": 2375,
+        "src": "fotos/optimized/1dacc9e818e29b41-2375.webp"
+      }
+    ]
+  },
+  "fotos/eu.jpg": {
+    "width": 2658,
+    "height": 3972,
+    "variants": [
+      {
+        "width": 480,
+        "src": "fotos/optimized/2e32bd67a272ac5c-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "fotos/optimized/2e32bd67a272ac5c-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "fotos/optimized/2e32bd67a272ac5c-1600.webp"
+      },
+      {
+        "width": 2400,
+        "src": "fotos/optimized/2e32bd67a272ac5c-2400.webp"
+      }
+    ]
+  },
+  "fotos/eubebe.jpg": {
+    "width": 6986,
+    "height": 4638,
+    "variants": [
+      {
+        "width": 480,
+        "src": "fotos/optimized/2efafe163920f954-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "fotos/optimized/2efafe163920f954-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "fotos/optimized/2efafe163920f954-1600.webp"
+      },
+      {
+        "width": 2400,
+        "src": "fotos/optimized/2efafe163920f954-2400.webp"
+      }
+    ]
+  },
+  "fotos/homembiclicleta.jpg": {
+    "width": 1920,
+    "height": 1080,
+    "variants": [
+      {
+        "width": 480,
+        "src": "fotos/optimized/7a00e345f2ba17be-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "fotos/optimized/7a00e345f2ba17be-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "fotos/optimized/7a00e345f2ba17be-1600.webp"
+      },
+      {
+        "width": 1920,
+        "src": "fotos/optimized/7a00e345f2ba17be-1920.webp"
+      }
+    ]
+  },
+  "fotos/kodakhobby.jpg": {
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 480,
+        "src": "fotos/optimized/d349b9b41c496395-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "fotos/optimized/d349b9b41c496395-960.webp"
+      },
+      {
+        "width": 1200,
+        "src": "fotos/optimized/d349b9b41c496395-1200.webp"
+      }
+    ]
+  },
+  "fotos/passaro.jpg": {
+    "width": 1920,
+    "height": 1080,
+    "variants": [
+      {
+        "width": 480,
+        "src": "fotos/optimized/3a1dd6aaba1dc118-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "fotos/optimized/3a1dd6aaba1dc118-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "fotos/optimized/3a1dd6aaba1dc118-1600.webp"
+      },
+      {
+        "width": 1920,
+        "src": "fotos/optimized/3a1dd6aaba1dc118-1920.webp"
+      }
+    ]
+  },
+  "fotos/pescador.jpg": {
+    "width": 6120,
+    "height": 7084,
+    "variants": [
+      {
+        "width": 480,
+        "src": "fotos/optimized/fe08f040410a5bb0-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "fotos/optimized/fe08f040410a5bb0-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "fotos/optimized/fe08f040410a5bb0-1600.webp"
+      },
+      {
+        "width": 2400,
+        "src": "fotos/optimized/fe08f040410a5bb0-2400.webp"
+      }
+    ]
+  },
+  "fotos/pista.jpg": {
+    "width": 6112,
+    "height": 6112,
+    "variants": [
+      {
+        "width": 480,
+        "src": "fotos/optimized/5bfd13514aa6ad0e-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "fotos/optimized/5bfd13514aa6ad0e-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "fotos/optimized/5bfd13514aa6ad0e-1600.webp"
+      },
+      {
+        "width": 2400,
+        "src": "fotos/optimized/5bfd13514aa6ad0e-2400.webp"
+      }
+    ]
+  },
+  "fotos/retrato.jpg": {
+    "width": 3060,
+    "height": 3179,
+    "variants": [
+      {
+        "width": 480,
+        "src": "fotos/optimized/b662eb0ae5296e86-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "fotos/optimized/b662eb0ae5296e86-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "fotos/optimized/b662eb0ae5296e86-1600.webp"
+      },
+      {
+        "width": 2400,
+        "src": "fotos/optimized/b662eb0ae5296e86-2400.webp"
+      }
+    ]
+  },
+  "fotos/show.jpg": {
+    "width": 2066,
+    "height": 2458,
+    "variants": [
+      {
+        "width": 480,
+        "src": "fotos/optimized/4b138e88118e1310-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "fotos/optimized/4b138e88118e1310-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "fotos/optimized/4b138e88118e1310-1600.webp"
+      },
+      {
+        "width": 2066,
+        "src": "fotos/optimized/4b138e88118e1310-2066.webp"
+      }
+    ]
+  },
+  "fotos/trilhapraiadgua.jpg": {
+    "width": 6118,
+    "height": 7400,
+    "variants": [
+      {
+        "width": 480,
+        "src": "fotos/optimized/3544f21b39b0a549-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "fotos/optimized/3544f21b39b0a549-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "fotos/optimized/3544f21b39b0a549-1600.webp"
+      },
+      {
+        "width": 2400,
+        "src": "fotos/optimized/3544f21b39b0a549-2400.webp"
+      }
+    ]
+  },
+  "fotos/zimba antiga/caixad´gua.webp": {
+    "width": 598,
+    "height": 456,
+    "variants": [
+      {
+        "width": 480,
+        "src": "fotos/optimized/2c522b96b8d561c7-480.webp"
+      },
+      {
+        "width": 598,
+        "src": "fotos/optimized/2c522b96b8d561c7-598.webp"
+      }
+    ]
+  },
+  "fotos/zimba antiga/fotografo.jpg": {
+    "width": 787,
+    "height": 1185,
+    "variants": [
+      {
+        "width": 480,
+        "src": "fotos/optimized/a9b5f46b0b4a6fbc-480.webp"
+      },
+      {
+        "width": 787,
+        "src": "fotos/optimized/a9b5f46b0b4a6fbc-787.webp"
+      }
+    ]
+  },
+  "fotos/zimba antiga/nafragiopraiadgua.jpg": {
+    "width": 569,
+    "height": 406,
+    "variants": [
+      {
+        "width": 480,
+        "src": "fotos/optimized/daa03f6d0230dbc2-480.webp"
+      },
+      {
+        "width": 569,
+        "src": "fotos/optimized/daa03f6d0230dbc2-569.webp"
+      }
+    ]
+  },
+  "fotos/zimba antiga/nereuramos.jpg": {
+    "width": 1220,
+    "height": 858,
+    "variants": [
+      {
+        "width": 480,
+        "src": "fotos/optimized/d88a82befdafd9ac-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "fotos/optimized/d88a82befdafd9ac-960.webp"
+      },
+      {
+        "width": 1220,
+        "src": "fotos/optimized/d88a82befdafd9ac-1220.webp"
+      }
+    ]
+  },
+  "fotos/zimba antiga/porto.jpg": {
+    "width": 3228,
+    "height": 2400,
+    "variants": [
+      {
+        "width": 480,
+        "src": "fotos/optimized/922c0caa5fa5f179-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "fotos/optimized/922c0caa5fa5f179-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "fotos/optimized/922c0caa5fa5f179-1600.webp"
+      },
+      {
+        "width": 2400,
+        "src": "fotos/optimized/922c0caa5fa5f179-2400.webp"
+      }
+    ]
+  },
+  "fotos/zimba antiga/praiadgua.jpg": {
+    "width": 258,
+    "height": 195,
+    "variants": [
+      {
+        "width": 258,
+        "src": "fotos/optimized/852e393b8c992b50-258.webp"
+      }
+    ]
+  },
+  "fotos/zimba antiga/rosa.jpg": {
+    "width": 1200,
+    "height": 675,
+    "variants": [
+      {
+        "width": 480,
+        "src": "fotos/optimized/81b977eb11fcbf98-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "fotos/optimized/81b977eb11fcbf98-960.webp"
+      },
+      {
+        "width": 1200,
+        "src": "fotos/optimized/81b977eb11fcbf98-1200.webp"
+      }
+    ]
+  },
+  "fotos/zimba antiga/ruas.jpg": {
+    "width": 1082,
+    "height": 684,
+    "variants": [
+      {
+        "width": 480,
+        "src": "fotos/optimized/18bc7ef4789552ee-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "fotos/optimized/18bc7ef4789552ee-960.webp"
+      },
+      {
+        "width": 1082,
+        "src": "fotos/optimized/18bc7ef4789552ee-1082.webp"
+      }
+    ]
+  },
+  "fotos/zimba antiga/vistaarea.jpg": {
+    "width": 1026,
+    "height": 684,
+    "variants": [
+      {
+        "width": 480,
+        "src": "fotos/optimized/217f093c7d91e467-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "fotos/optimized/217f093c7d91e467-960.webp"
+      },
+      {
+        "width": 1026,
+        "src": "fotos/optimized/217f093c7d91e467-1026.webp"
+      }
+    ]
+  }
+}

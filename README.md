@@ -41,4 +41,19 @@ JavaScript: Interatividade e funcionalidades dinâmicas
 
 Font Awesome: Ícones para redes sociais
 
+**Otimização das fotografias**
+
+As páginas usam versões WebP responsivas em `fotos/optimized/`, com larguras de
+até 480, 960, 1600 e 2400 pixels. O navegador escolhe a versão adequada à tela.
+As primeiras imagens têm prioridade de carregamento; as demais usam o
+carregamento nativo sob demanda (`loading="lazy"`). A galeria só carrega a
+versão ampliada quando a foto é aberta. Os originais em `fotos/` são preservados.
+
+Para gerar as versões de novas fotos no macOS, instale o conversor com
+`brew install webp` e execute `python3 scripts/optimize-images.py`. O script
+atualiza `fotos/optimized/manifest.json` com os caminhos e as dimensões; use essas
+informações nos atributos `src`, `srcset`, `sizes`, `width` e `height` do HTML.
+Na galeria, configure também `data-full-src` com a maior versão para o modal.
+
+Ao publicar, envie os arquivos HTML e a pasta `fotos/optimized/` juntos.
 
